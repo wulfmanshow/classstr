@@ -1,0 +1,101 @@
+#include<iostream>
+
+using namespace std;
+
+class String
+
+{
+
+	char* str;
+
+public:
+
+	String();
+
+	String(char*);
+
+	void Str();
+
+	void Init();
+
+	void Print();
+
+
+
+};
+
+String::String()
+
+{
+
+	str = nullptr;
+
+}
+
+String::String(char* s)
+
+{
+
+	int l = strlen(s) + 1;
+
+	str = new char[l];
+
+	if (str == 0)
+
+	{
+
+		exit(1);
+
+	}
+
+	strcpy_s(str, l, s);
+
+}
+
+void String::Print()
+
+{
+
+	cout << "Enter String :" << endl;
+
+}
+
+void String::Init()
+
+{
+
+	char buffer[80];
+
+	cout << "Enter String:" << endl;
+
+	cin.getline(buffer, 80);
+
+	int l = strlen(buffer) + 1;
+
+	str = new char[l];
+
+	if (str == 0)
+
+	{
+
+		exit(1);
+
+	}
+
+	strcpy_s(str, l, buffer);
+
+}
+
+void main()
+
+{
+
+	String obj1;
+
+	obj1.Init();
+
+	obj1.Print();
+
+
+
+};
